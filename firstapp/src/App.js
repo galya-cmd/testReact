@@ -14,7 +14,7 @@ const data = [
 function App() {
   return ( 
     <div className = "App" >
-      const MyCompo = () = (
+    
   <ReactSvgPieChart
     data={data}
     // If you need expand on hover (or touch) effect
@@ -30,7 +30,7 @@ function App() {
   />
 )
     </div>
-  );
+  ;
 }
 
 export default App;
