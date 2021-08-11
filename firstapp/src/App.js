@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Donut from "./components/charts/Donut";
+
 
 function App() {
   return ( 
