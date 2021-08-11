@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ReactSvgPieChart from "react-svg-piechart"
- 
+
 const data = [
   {title: "Data 1", value: 100, color: "#22594e"},
   {title: "Data 2", value: 60, color: "#2f7d6d"},
@@ -10,11 +10,7 @@ const data = [
   {title: "Data 5", value: 10, color: "#a1d9ce"},
 ]
 
-
-function App() {
-  return ( 
-    <div className = "App" >
-    
+const MyCompo = () => (
   <ReactSvgPieChart
     data={data}
     // If you need expand on hover (or touch) effect
@@ -29,8 +25,17 @@ function App() {
     }}
   />
 )
+
+
+function App() {
+  return ( 
+    <div className = "App" >
+    
+  <ReactSvgPieChart />
+  
     </div>
-  ;
+  
+  );
 }
 
 export default App;
