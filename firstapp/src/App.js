@@ -1,41 +1,49 @@
 import logo from './logo.svg';
 import './App.css';
-import ReactSvgPieChart from "react-svg-piechart"
+import { Doughnut } from 'react-chartjs-2';
 
-const data = [
-  {title: "Data 1", value: 100, color: "#22594e"},
-  {title: "Data 2", value: 60, color: "#2f7d6d"},
-  {title: "Data 3", value: 30, color: "#3da18d"},
-  {title: "Data 4", value: 20, color: "#69c2b0"},
-  {title: "Data 5", value: 10, color: "#a1d9ce"},
-]
+const data = {
+  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+  datasets: [
+    {
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+      ],
+      borderWidth: 1,
+    },
+  ],
+};
 
-const MyCompo = () => (
-  <ReactSvgPieChart
-    data={data}
-    // If you need expand on hover (or touch) effect
-    expandOnHover
-    // If you need custom behavior when sector is hovered (or touched)
-    onSectorHover={(d, i, e) => {
-      if (d) {
-        console.log("Mouse enter - Index:", i, "Data:", d, "Event:", e)
-      } else {
-        console.log("Mouse leave - Index:", i, "Event:", e)
-      }
-    }}
-  />
-)
-
-
-function App() {
-  return ( 
-    <div className = "App" >
-    
-  <ReactSvgPieChart />
-  
+const DoughnutChart = () => (
+  <>
+    <div className='header'>
+      <h1 className='title'>Doughnut Chart</h1>
+      <div className='links'>
+        <a
+          className='btn btn-gh'
+          href='https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/Doughnut.js'
+        >
+          Github Source
+        </a>
+      </div>
     </div>
-  
-  );
-}
+    <Doughnut data={data} />
+  </>
+);
 
-export default App;
+export default DoughnutChart;
